@@ -11,12 +11,21 @@ public class TestStudent {
     void init()
     {
         student = new Student();
+        student.Name = "Bob";
+        student.Email = "Bob@gmit.ie";
     }
 
     @Test
     public void testName()
     {
         Assertions.assertFalse(student.Name.isEmpty());
+    }
+
+    @Test
+    public void testNameFail()
+    {
+        Exception e = Assertions.assertThrows();
+        Assertions.assertEquals("ERROR!", e.getMessage());
     }
 
     @Test
